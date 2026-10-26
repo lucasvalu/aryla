@@ -1,0 +1,25 @@
+# Chat model per role. A role may be a full profile or the name of another profile.
+# Only aryla/llm/factory.py reads this file.
+#
+# num_ctx: Ollama defaults to 2048/4096 and silently truncates; keep >= 8192.
+# reasoning: Qwen3 "thinking" mode. qwen3:4b with reasoning=false rambles in the
+# answer text; use reasoning=true if you switch to it (see README for timings).
+
+default:
+  provider: ollama
+  model: qwen3:1.7b
+  temperature: 0
+  num_ctx: 8192
+  reasoning: false
+
+roles:
+  orchestrator: default
+  # Point this at a code model (e.g. qwen2.5-coder) once one is chosen.
+  coding: default
+  general:
+    provider: ollama
+    model: qwen3:1.7b
+    temperature: 0.7
+    num_ctx: 8192
+    reasoning: false
+  summarizer: default

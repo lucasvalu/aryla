@@ -1,0 +1,20 @@
+# Ambiente
+.venv/
+.env
+.python-version.local
+
+# Dados locais (checkpoints SQLite etc.)
+.data/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Tools
+.langgraph_api/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

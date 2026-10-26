@@ -1,0 +1,25 @@
+# MCP servers and tool policy. Anything not listed under read/write is blocked.
+# ${VAR} is expanded from the environment; empty values are dropped.
+#
+# The coding agent is read-only for now: `write` is empty, so write_file, edit_file,
+# create_directory and move_file never reach the model. To enable writes, list them
+# under `write`; the graph will ask for human confirmation before each call.
+
+policies:
+  filesystem:
+    read:
+      - read_text_file
+      - read_multiple_files
+      - list_directory
+      - directory_tree
+      - search_files
+      - get_file_info
+    write: []
+
+servers:
+  filesystem:
+    policy: filesystem
+    connection:
+      command: npx
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "${CODING_WORKSPACE}"]
+    required_env: [CODING_WORKSPACE]

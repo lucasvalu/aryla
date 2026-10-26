@@ -1,0 +1,114 @@
+# Routing evaluation set: (user message, expected agent). Runs against the real model
+# with `uv run pytest -m eval` or `uv run python scripts/routing_eval.py`.
+# Add a case for every routing bug found in use. Target: >= 90% accuracy.
+
+cases:
+  # coding
+  - message: "explain what this function does"
+    expected: coding
+  - message: "review this Python snippet for bugs"
+    expected: coding
+  - message: "write a shell script that renames files by date"
+    expected: coding
+  - message: "what does aryla/graph/builder.py do?"
+    expected: coding
+  - message: "why doesn't this regex match an email address?"
+    expected: coding
+  - message: "what is the difference between a list and a tuple in Python?"
+    expected: coding
+  - message: "how does Python's garbage collector work?"
+    expected: coding
+  - message: "write a SQL query that returns the top 10 customers by revenue"
+    expected: coding
+  - message: "convert this JavaScript function to TypeScript"
+    expected: coding
+  - message: "which files in the workspace import the settings module?"
+    expected: coding
+  - message: "find where the function build_graph is defined"
+    expected: coding
+  - message: "add type hints to this function"
+    expected: coding
+  - message: "what are the SOLID principles in object-oriented programming?"
+    expected: coding
+  - message: "best practices for writing commit messages?"
+    expected: coding
+  - message: "explain recursion with a code example"
+    expected: coding
+  - message: "my pytest fixture is not found, what could be wrong?"
+    expected: coding
+  - message: "write a Dockerfile for a FastAPI app"
+    expected: coding
+  - message: "what does the README in this repo say about setup?"
+    expected: coding
+  - message: "refactor this loop into a list comprehension"
+    expected: coding
+  - message: "what is a directed acyclic graph and how would I implement one?"
+    expected: coding
+
+  # general
+  - message: "what is the capital of Australia?"
+    expected: general
+  - message: "help me write an email requesting vacation"
+    expected: general
+  - message: "how does the HTTP protocol work, conceptually?"
+    expected: general
+  - message: "proofread this text: 'we is going to deliver the project tomorrow'"
+    expected: general
+  - message: "what does the acronym MCP mean in artificial intelligence?"
+    expected: general
+  - message: "give me three name ideas for a platform team"
+    expected: general
+  - message: "translate 'deadline' to Portuguese in a project context"
+    expected: general
+  - message: "how do I explain scrum to someone who never worked in IT?"
+    expected: general
+  - message: "write a two-line summary of what Docker is for a manager"
+    expected: general
+  - message: "what is the difference between authentication and authorization?"
+    expected: general
+  - message: "what is a sprint in scrum?"
+    expected: general
+  - message: "help me put together an agenda for a retrospective meeting"
+    expected: general
+  - message: "what is an API token and why should it be kept secret?"
+    expected: general
+  - message: "what was the first thing I asked you?"
+    expected: general
+  - message: "summarize what we have discussed so far"
+    expected: general
+  - message: "who wrote the novel Dom Casmurro?"
+    expected: general
+  - message: "how many days are there in a leap year?"
+    expected: general
+  - message: "suggest a polite way to decline a meeting invitation"
+    expected: general
+  - message: "what is the difference between weather and climate?"
+    expected: general
+  - message: "rewrite this paragraph in a more formal tone"
+    expected: general
+  - message: "what is a checkpointer in LangGraph?"
+    expected: coding
+  - message: "what is the time complexity of binary search?"
+    expected: coding
+
+  # clarify
+  - message: "help me"
+    expected: clarify
+  - message: "hi"
+    expected: clarify
+  - message: "hey, how's it going?"
+    expected: clarify
+  - message: "do that thing I asked"
+    expected: clarify
+  - message: "I need something"
+    expected: clarify
+  - message: "?"
+    expected: clarify
+  - message: "can you check this for me?"
+    expected: clarify
+  - message: "go on"
+    expected: clarify
+  - message: "is it possible?"
+    expected: clarify
+  - message: "sort it out"
+    expected: clarify
